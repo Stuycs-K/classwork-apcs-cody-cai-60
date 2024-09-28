@@ -32,24 +32,42 @@ public class MyArrays {
   }
   public static void main(String[] args) {
     //testing returnCopy
-    int[] ary = {1, 9, 7};
-    int[] ary2 = returnCopy(ary);
-    System.out.println("Array 1: " + arrayToString(ary) + " Array 2: " + arrayToString(ary2) + " Different Copy? " + !(ary == ary2) + " Same Elements? " + arrayToString(ary).equals(arrayToString(ary2)));
-    int[] ary3 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-    int[] ary4 = returnCopy(ary3);
-    System.out.println("Array 1: " + arrayToString(ary3) + " Array 2: " + arrayToString(ary4) + " Different Copy? " + !(ary3 == ary4) + " Same Elements? " + arrayToString(ary3).equals(arrayToString(ary4)));
-    int[] ary5 = {1, 0, 0, 0, 0, 9};
-    int[] ary6 = returnCopy(ary5);
-    System.out.println("Array 1: " + arrayToString(ary5) + " Array 2: " + arrayToString(ary6) + " Different Copy? " + !(ary5 == ary6) + " Same Elements? " + arrayToString(ary5).equals(arrayToString(ary6)));
-    int[] ary7 = {};
-    int[] ary8 = returnCopy(ary7);
-    System.out.println("Array 1: " + arrayToString(ary7) + " Array 2: " + arrayToString(ary8) + " Different Copy? " + !(ary7 == ary8) + " Same Elements? " + arrayToString(ary7).equals(arrayToString(ary8)));
-    int[] ary9 = {0};
-    int[] ary10 = returnCopy(ary9);
-    System.out.println("Array 1: " + arrayToString(ary9) + " Array 2: " + arrayToString(ary10) + " Different Copy? " + !(ary9 == ary10) + " Same Elements? " + arrayToString(ary9).equals(arrayToString(ary10)));
+    int[] ary1 = {1, 9, 7};
+    System.out.println("Expected: true, true | Result: Different Copy? " + !(ary1 == returnCopy(ary1)) + " | Same Elements? " + arrayToString(ary1).equals(arrayToString(returnCopy(ary1))));
+    int[] ary2 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    System.out.println("Expected: true, true | Result: Different Copy? " + !(ary1 == returnCopy(ary2)) + " | Same Elements? " + arrayToString(ary2).equals(arrayToString(returnCopy(ary2))));
+    int[] ary3 = {1, 0, 0, 0, 0, 9};
+    System.out.println("Expected: true, true | Result: Different Copy? " + !(ary1 == returnCopy(ary3)) + " | Same Elements? " + arrayToString(ary3).equals(arrayToString(returnCopy(ary3))));
+    int[] ary4 = {};
+    System.out.println("Expected: true, true | Result: Different Copy? " + !(ary1 == returnCopy(ary4)) + " | Same Elements? " + arrayToString(ary4).equals(arrayToString(returnCopy(ary4))));
+    int[] ary5 = {0};
+    System.out.println("Expected: true, true | Result: Different Copy? " + !(ary1 == returnCopy(ary5)) + " | Same Elements? " + arrayToString(ary5).equals(arrayToString(returnCopy(ary5))));
 
     //testing concatArray
-
+    int[] ary1a = {1, 2, 3};
+    int[] ary1b = {1, 9, 7, 6};
+    String result1 = arrayToString(concatArray(ary1a, ary1b));
+    System.out.println("Expected: [1, 9, 7, 6, 1, 2, 3] | Result: " + result1 + " | Match? " + result1.equals("[1, 9, 7, 6, 1, 2, 3]"));
+    int[] ary2a = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int[] ary2b = {10, 11, 12, 13};
+    String result2 = arrayToString(concatArray(ary2a, ary2b));
+    System.out.println("Expected: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] | Result: " + result2 + " | Match? " + result2.equals("[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]"));
+    int[] ary3a = {27, 10, 15};
+    int[] ary3b = {17, 25, 32};
+    String result3 = arrayToString(concatArray(ary3a, ary3b));
+    System.out.println("Expected: [27, 10, 15, 17, 25, 32] | Result: " + result3 + " | Match? " + result3.equals("[27, 10, 15, 17, 25, 32]"));
+    int[] ary4a = {};
+    int[] ary4b = {11, 55, 22};
+    String result4 = arrayToString(concatArray(ary4a, ary4b));
+    System.out.println("Expected: [11, 55, 22] | Result: " + result4 + " | Match? " + result4.equals("[11, 55, 22]"));
+    int[] ary5a = {28, 14, 45};
+    int[] ary5b = {};
+    String result3 = arrayToString(concatArray(ary5a, ary5b));
+    System.out.println("Expected: [28, 14, 45] | Result: " + result5 + " | Match? " + result5.equals("[28, 14, 45]"));
+    int[] ary6a = {};
+    int[] ary6b = {};
+    String result3 = arrayToString(concatArray(ary6a, ary6b));
+    System.out.println("Expected: [] | Result: " + result6 + " | Match? " + result6.equals("[]"));
 
   }
 }
