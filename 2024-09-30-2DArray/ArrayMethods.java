@@ -27,20 +27,15 @@ public class ArrayMethods {
     * You are encouraged to notice that you may want to re-use
     * previous code, but you should NOT duplicate that code. (Don't copy/paste or retype it)
     */
-  public static String arrToString(int[][]ary){
-    String answer = "[[";
+  public static String arrToString(int[][]ary) {
+    String result = "[";
     for (int i = 0; i < ary.length; i++) {
-      for (int j = 0; j < ary[i].length; j++) {
-        answer += ary[i][j];
-        if (j < ary[i].length-1) {
-          answer += ", ";
-        }
-      }
+      result += arrToString(ary[i]);
       if (i < ary.length-1) {
-        answer += "], [";
+        result += ", ";
       }
     }
-    return answer + "]]";
+    return result + "]";
   }
 
   /*Return the sum of all of the values in the 2D array */
