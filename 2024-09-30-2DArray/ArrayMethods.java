@@ -96,6 +96,19 @@ public class ArrayMethods {
     int[][] ary6b = {{}, {}, {}};
     System.out.println("Expected: 0 | Return: " + arr2DSum(ary6b) + " | Match? " + (arr2DSum(ary6b) == 0));
 
+    //testing swapRC
+    int[][] ary1c = {{1, 2, 3}, {4, 5, 6}};
+    System.out.println("Expected: [[1, 4], [2, 5], [3, 6]] | Return: " + swapRC(ary1c) + " | Match? " + arrToString(swapRC(ary1c)).equals("[[1, 4], [2, 5], [3, 6]]"));
+    int[][] ary2c = {{4, 7, 15}, {13, 28, 6}, {14, 28, 37}};
+    System.out.println("Expected: [[4, 13, 14], [7, 28, 28], [15, 6, 37]] | Return: " + swapRC(ary2c) + " | Match? " + arrToString(swapRC(ary2c)).equals("[[4, 13, 14], [7, 28, 28], [15, 6, 37]]"));
+    int[][] ary3c = {{1, 2}, {4, 5}, {7, 8}};
+    System.out.println("Expected: [[1, 4, 7], [2, 5, 8]] | Return: " + swapRC(ary3c) + " | Match? " + arrToString(swapRC(ary3c)).equals("[[1, 4, 7], [2, 5, 8]]"));
+    int[][] ary4c = {{1}, {4}, {7}};
+    System.out.println("Expected: [[1, 4, 7]] | Return: " + swapRC(ary4c) + " | Match? " + arrToString(swapRC(ary4c)).equals("[[1, 4, 7]]"));
+    int[][] ary5c = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+    System.out.println("Expected: [[0, 0, 0], [0, 0, 0], [0, 0, 0]] | Return: " + swapRC(ary5c) + " | Match? " + arrToString(swapRC(ary5c)).equals("[[0, 0, 0], [0, 0, 0], [0, 0, 0]]"));
+    int[][] ary6c = {{0}, {0}, {0}};
+    System.out.println("Expected: [[0, 0, 0]] | Return: " + swapRC(ary6c) + " | Match? " + arrToString(swapRC(ary6c)).equals("[[0, 0, 0]]"));
   }
 
 }
