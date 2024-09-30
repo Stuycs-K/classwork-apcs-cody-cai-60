@@ -59,7 +59,13 @@ public class ArrayMethods {
     * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
     */
   public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
+    int[][] result = new int[nums[0].length][nums.length];
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[i].length; j++) {
+        result[j][i] = nums[i][j];
+      }
+    }
+    return result;
   }
 
   public static void main (String[] args) {
