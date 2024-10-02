@@ -176,6 +176,21 @@ public class ArrayMethods {
     replaceNegative(ary4);
     System.out.println("Expected: [[1, 0, 0, 0, 0], [0, 1, 0, 0, 0], [0, 0, 1, 0, 0]] | Return: " + arrToString(ary4) + " | Match? " + arrToString(ary4).equals("[[1, 0, 0, 0, 0], [0, 1, 0, 0, 0], [0, 0, 1, 0, 0]]"));
 
+    //testing copy
+    int[][] ary5 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    System.out.println("Expected: [[1, 2, 3], [4, 5, 6], [7, 8, 9]] | Return: " + arrToString(copy(ary5)) + " | Same Elements? " + arrToString(copy(ary5)).equals("[[1, 2, 3], [4, 5, 6], [7, 8, 9]]") + " | Different Address? " + !(ary5 == copy(ary5)));
+    ary5 = new int[][] {{2, 3}, {21, 4, 513, 5}, {1, 2, 3, 21, 41}};
+    System.out.println("Expected: [[2, 3], [21, 4, 513, 5], [1, 2, 3, 21, 41]] | Return: " + arrToString(copy(ary5)) + " | Same Elements? " + arrToString(copy(ary5)).equals("[[2, 3], [21, 4, 513, 5], [1, 2, 3, 21, 41]]") + " | Different Address? " + !(ary5 == copy(ary5)));
+    ary5 = new int[][] {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+    System.out.println("Expected: [[0, 0, 0], [0, 0, 0], [0, 0, 0]] | Return: " + arrToString(copy(ary5)) + " | Same Elements? " + arrToString(copy(ary5)).equals("[[0, 0, 0], [0, 0, 0], [0, 0, 0]]") + " | Different Address? " + !(ary5 == copy(ary5)));
+    ary5 = new int[][] {{2, 7}, {0, 4, 0, 5}, {1, 2, 0, 21, 0}, {21, 62, 0, 1, 0, 0}};
+    System.out.println("Expected: [[2, 7], [0, 4, 0, 5], [1, 2, 0, 21, 0], [21, 62, 0, 1, 0, 0]] | Return: " + arrToString(copy(ary5)) + " | Same Elements? " + arrToString(copy(ary5)).equals("[[2, 7], [0, 4, 0, 5], [1, 2, 0, 21, 0], [21, 62, 0, 1, 0, 0]]") + " | Different Address? " + !(ary5 == copy(ary5)));
+    ary5 = new int[][] {{0, 0, 0, 0}, {0, 0}, {0}, {0, 0, 0}};
+    System.out.println("Expected: [[0, 0, 0, 0], [0, 0], [0], [0, 0, 0]] | Return: " + arrToString(copy(ary5)) + " | Same Elements? " + arrToString(copy(ary5)).equals("[[0, 0, 0, 0], [0, 0], [0], [0, 0, 0]]") + " | Different Address? " + !(ary5 == copy(ary5)));
+    ary5 = new int[][] {{}, {}, {}};
+    System.out.println("Expected: [[], [], []] | Return: " + arrToString(copy(ary5)) + " | Same Elements? " + arrToString(copy(ary5)).equals("[[], [], []]") + " | Different Address? " + !(ary5 == copy(ary5)));
+    ary5 = new int[][] {{}, {0, 0}, {0}, {0, 0, 0}, {}};
+    System.out.println("Expected: [[], [0, 0], [0], [0, 0, 0], []] | Return: " + arrToString(copy(ary5)) + " | Same Elements? " + arrToString(copy(ary5)).equals("[[], [0, 0], [0], [0, 0, 0], []]") + " | Different Address? " + !(ary5 == copy(ary5)));
 
   }
 
