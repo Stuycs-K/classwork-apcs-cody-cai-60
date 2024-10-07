@@ -23,8 +23,20 @@ public class ArrayDemo{
     System.out.println("Expected: 9 | Return: " + countZeros2D(ary) + " | Match? " + (countZeros2D(ary) == 9));
 
     //testing htmlTable
-
-
+    int[][] ary2 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    System.out.println("Expected: <table><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr><tr><td>7</td><td>8</td><td>9</td></tr></table> | Return: " + htmlTable(ary2) + " | Match? " + htmlTable(ary2).equals("<table><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr><tr><td>7</td><td>8</td><td>9</td></tr></table>"));
+    ary2 = new int[][] {{12, 13, 14}, {1, 8, 3}};
+    System.out.println("Expected: <table><tr><td>12</td><td>13</td><td>14</td></tr><tr><td>1</td><td>8</td><td>3</td></tr></table> | Return: " + htmlTable(ary2) + " | Match? " + htmlTable(ary2).equals("<table><tr><td>12</td><td>13</td><td>14</td></tr><tr><td>1</td><td>8</td><td>3</td></tr></table>"));
+    ary2 = new int[][] {{0, 0}, {1, 8, 3}, {0, 12, 0, 12}};
+    System.out.println("Expected: <table><tr><td>0</td><td>0</td></tr><tr><td>1</td><td>8</td><td>3</td></tr><tr><td>0</td><td>12</td><td>0</td><td>12</td></tr></table> | Return: " + htmlTable(ary2) + " | Match? " + htmlTable(ary2).equals("<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"));
+    ary2 = new int[][] {{}, {}, {}};
+    System.out.println("Expected: <table><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr></table> | Return: " + htmlTable(ary2) + " | Match? " + htmlTable(ary2).equals("<table><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr></table>"));
+    ary2 = new int[][] {{12, 0, 67, 21, 42}, {1, 8, 3, 7}, {82, 5, 0}, {2, 6}, {2}};
+    System.out.println("Expected: <table><tr><td>12</td><td>0</td><td>67</td><td>21</td><td>42</td></tr><tr><td>1</td><td>8</td><td>3</td><td>7</td></tr><tr><td>82</td><td>5</td><td>0</td></tr><tr><td>2</td><td>6</td></tr><tr><td>2</td></tr></table> | Return: " + htmlTable(ary2) + " | Match? " + htmlTable(ary2).equals("<table><tr><td>12</td><td>0</td><td>67</td><td>21</td><td>42</td></tr><tr><td>1</td><td>8</td><td>3</td><td>7</td></tr><tr><td>82</td><td>5</td><td>0</td></tr><tr><td>2</td><td>6</td></tr><tr><td>2</td></tr></table>"));
+    ary2 = new int[][] {{}, {1, 8, 3}, {6, 2, 0, 2}, {}};
+    System.out.println("Expected: <table><tr><td></td></tr><tr><td>1</td><td>8</td><td>3</td></tr><tr><td>6</td><td>2</td><td>0</td><td>2</td></tr><tr><td></td></tr></table> | Return: " + htmlTable(ary2) + " | Match? " + htmlTable(ary2).equals("<table><tr><td></td></tr><tr><td>1</td><td>8</td><td>3</td></tr><tr><td>6</td><td>2</td><td>0</td><td>2</td></tr><tr><td></td></tr></table>"));
+    ary2 = new int[][] {{65, 2, 74, 9}, {}, {6, 93, 53, 2}, {}};
+    System.out.println("Expected: <table><tr><td>65</td><td>2</td><td>74</td><td>9</td></tr><tr><td></td></tr><tr><td>6</td><td>93</td><td>53</td><td>2</td></tr><tr><td></td></tr></table> | Return: " + htmlTable(ary2) + " | Match? " + htmlTable(ary2).equals("<table><tr><td>65</td><td>2</td><td>74</td><td>9</td></tr><tr><td></td></tr><tr><td>6</td><td>93</td><td>53</td><td>2</td></tr><tr><td></td></tr></table>"));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
