@@ -28,7 +28,7 @@ public class ArrayDemo{
     ary2 = new int[][] {{12, 13, 14}, {1, 8, 3}};
     System.out.println("Expected: <table><tr><td>12</td><td>13</td><td>14</td></tr><tr><td>1</td><td>8</td><td>3</td></tr></table> | Return: " + htmlTable(ary2) + " | Match? " + htmlTable(ary2).equals("<table><tr><td>12</td><td>13</td><td>14</td></tr><tr><td>1</td><td>8</td><td>3</td></tr></table>"));
     ary2 = new int[][] {{0, 0}, {1, 8, 3}, {0, 12, 0, 12}};
-    System.out.println("Expected: <table><tr><td>0</td><td>0</td></tr><tr><td>1</td><td>8</td><td>3</td></tr><tr><td>0</td><td>12</td><td>0</td><td>12</td></tr></table> | Return: " + htmlTable(ary2) + " | Match? " + htmlTable(ary2).equals("<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"));
+    System.out.println("Expected: <table><tr><td>0</td><td>0</td></tr><tr><td>1</td><td>8</td><td>3</td></tr><tr><td>0</td><td>12</td><td>0</td><td>12</td></tr></table> | Return: " + htmlTable(ary2) + " | Match? " + htmlTable(ary2).equals("<table><tr><td>0</td><td>0</td></tr><tr><td>1</td><td>8</td><td>3</td></tr><tr><td>0</td><td>12</td><td>0</td><td>12</td></tr></table>"));
     ary2 = new int[][] {{}, {}, {}};
     System.out.println("Expected: <table><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr></table> | Return: " + htmlTable(ary2) + " | Match? " + htmlTable(ary2).equals("<table><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr></table>"));
     ary2 = new int[][] {{12, 0, 67, 21, 42}, {1, 8, 3, 7}, {82, 5, 0}, {2, 6}, {2}};
@@ -151,6 +151,17 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+    String result = "<table>";
+    for (int i = 0; i < nums.length; i++) {
+      result += "<tr>";
+      for (int j = 0; j < nums[i].length; j++) {
+        result += "<td>" + nums[i][j] + "</td>";
+      }
+      if (nums[i].length == 0) {
+        result += "<td></td>";
+      }
+      result += "</tr>";
+    }
+    return result + "</table>";
   }
 }
