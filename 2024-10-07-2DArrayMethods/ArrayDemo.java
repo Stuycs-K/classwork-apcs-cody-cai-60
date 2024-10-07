@@ -6,6 +6,23 @@ public class ArrayDemo{
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
 
+    //testing countZeros2D
+    int[][] ary = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    System.out.println("Expected: 0 | Return: " + countZeros2D(ary) + " | Match? " + countZeros2D(ary) == 0);
+    ary = new int[][] {{2, 0, 125}, {1, 0, 21, 0}};
+    System.out.println("Expected: 3 | Return: " + countZeros2D(ary) + " | Match? " + countZeros2D(ary) == 3);
+    ary = new int[][] {{0, 0}};
+    System.out.println("Expected: 2 | Return: " + countZeros2D(ary) + " | Match? " + countZeros2D(ary) == 2);
+    ary = new int[][] {{0, 14, 26, 0}, {1, 0, 0, 0, 165, 12}};
+    System.out.println("Expected: 5 | Return: " + countZeros2D(ary) + " | Match? " + countZeros2D(ary) == 5);
+    ary = new int[][] {{67, 0, 12, 0, 0}, {0, 21, 25, 61, 0, 0}, {12, 6, 0, 23, 0}, {98, 0, 62, 0}};
+    System.out.println("Expected: 10 | Return: " + countZeros2D(ary) + " | Match? " + countZeros2D(ary) == 10);
+    ary = new int[][] {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
+    System.out.println("Expected: 9 | Return: " + countZeros2D(ary) + " | Match? " + countZeros2D(ary) == 9);
+
+    //testing htmlTable
+
+
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
