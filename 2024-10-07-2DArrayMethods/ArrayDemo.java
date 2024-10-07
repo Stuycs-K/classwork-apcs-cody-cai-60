@@ -8,17 +8,19 @@ public class ArrayDemo{
 
     //testing countZeros2D
     int[][] ary = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    System.out.println("Expected: 0 | Return: " + countZeros2D(ary) + " | Match? " + countZeros2D(ary) == 0);
+    System.out.println("Expected: 0 | Return: " + countZeros2D(ary) + " | Match? " + (countZeros2D(ary) == 0));
+    ary = new int[][] {{1, 3, 5}, {7, 9}, {11, 13, 15, 17, 19}};
+    System.out.println("Expected: 0 | Return: " + countZeros2D(ary) + " | Match? " + (countZeros2D(ary) == 0));
     ary = new int[][] {{2, 0, 125}, {1, 0, 21, 0}};
-    System.out.println("Expected: 3 | Return: " + countZeros2D(ary) + " | Match? " + countZeros2D(ary) == 3);
+    System.out.println("Expected: 3 | Return: " + countZeros2D(ary) + " | Match? " + (countZeros2D(ary) == 3));
     ary = new int[][] {{0, 0}};
-    System.out.println("Expected: 2 | Return: " + countZeros2D(ary) + " | Match? " + countZeros2D(ary) == 2);
+    System.out.println("Expected: 2 | Return: " + countZeros2D(ary) + " | Match? " + (countZeros2D(ary) == 2));
     ary = new int[][] {{0, 14, 26, 0}, {1, 0, 0, 0, 165, 12}};
-    System.out.println("Expected: 5 | Return: " + countZeros2D(ary) + " | Match? " + countZeros2D(ary) == 5);
+    System.out.println("Expected: 5 | Return: " + countZeros2D(ary) + " | Match? " + (countZeros2D(ary) == 5));
     ary = new int[][] {{67, 0, 12, 0, 0}, {0, 21, 25, 61, 0, 0}, {12, 6, 0, 23, 0}, {98, 0, 62, 0}};
-    System.out.println("Expected: 10 | Return: " + countZeros2D(ary) + " | Match? " + countZeros2D(ary) == 10);
+    System.out.println("Expected: 10 | Return: " + countZeros2D(ary) + " | Match? " + (countZeros2D(ary) == 10));
     ary = new int[][] {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
-    System.out.println("Expected: 9 | Return: " + countZeros2D(ary) + " | Match? " + countZeros2D(ary) == 9);
+    System.out.println("Expected: 9 | Return: " + countZeros2D(ary) + " | Match? " + (countZeros2D(ary) == 9));
 
     //testing htmlTable
 
@@ -53,7 +55,15 @@ public class ArrayDemo{
 
   //1. Calculate and return how many elements equal zero in the 2D array.
   public static int countZeros2D(int[][] nums){
-    return 0;
+    int count = 0;
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[i].length; j++) {
+        if (nums[i][j] == 0) {
+          count++;
+        }
+      }
+    }
+    return count;
   }
 
   //2. Calculate the sum of a 2d array
