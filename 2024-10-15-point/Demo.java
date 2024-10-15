@@ -16,6 +16,9 @@ public class Demo{
     System.out.println( distance(p1,p2));
     System.out.println( Point.distance(p1,p2));
     System.out.println( p1.distanceTo(p2));
+    System.out.println( distance(p2,p3));
+    System.out.println( Point.distance(p2,p3));
+    System.out.println( p2.distanceTo(p3));
 
     //testing 2nd Point constructor
     Point p4 = new Point(p1);
