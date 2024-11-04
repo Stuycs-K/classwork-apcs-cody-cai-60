@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class TriangleTester {
 
+  //Part A
   public static boolean checkTriangle(int a, int b, int c) {
-    if ((a + b > c) || (a + c > b) || (b + c > a)) {
+    if ((a + b > c) && (a + c > b) && (b + c > a)) {
       return true;
     } else {
       return false;
