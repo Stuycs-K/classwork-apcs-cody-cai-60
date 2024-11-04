@@ -33,8 +33,32 @@ public class TriangleTester {
     }
   }
 
+  //Part B
+
+  public static int countTrianglesB (String filename) {
+    try {
+      File file = new File(filename);
+      Scanner input = new Scanner(file);
+      int count = 0;
+      while (input.hasNextLine() && input.hasNextInt()) {
+        
+      }
+      return count;
+
+    } catch (FileNotFoundException e) {
+      return -1;
+    }
+  }
+
+
+
+
   public static void main(String[] args) {
-    System.out.println(countTrianglesA("inputTri.txt"));
+    //Testing part a
+    //System.out.println(countTrianglesA("inputTri.txt"));
+
+    //Testing part break;
+    System.out.println(countTrianglesB("inputTri.txt"));
   }
 
 }
