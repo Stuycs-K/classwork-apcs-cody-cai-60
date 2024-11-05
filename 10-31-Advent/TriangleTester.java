@@ -72,12 +72,36 @@ public class TriangleTester {
     }
   }
 
-  public static void main(String[] args) {
-    //Testing part a
-    System.out.println(countTrianglesA("inputTri.txt")); //correct answer 52
+  public static int complexFile (String filename) {
+    try {
+      File file = new File (filename);
+      Scanner input = new Scanner (file);
+      int count = 0;
+      String[] line;
+      while (input.hasNextLine()) {
+        line = input.nextLine().split("x");
+        if (checkTriangle(Integer.parseInt(line[0]), Integer.parseInt(line[1]), Integer.parseInt(line[2]))) {
+          count++;
+        }
+        line = new String[] {};
+      }
+      return count;
+    } catch (FileNotFoundException e) {
+      return -1;
+    }
+  }
 
-    //Testing part break;
-    System.out.println(countTrianglesB("inputTri.txt")); //correct answer 95
+  public static void main(String[] args) {
+    String filename = "inputTri.txt";
+
+    //Testing part a
+    //System.out.println(countTrianglesA(filename)); //correct answer 52
+
+    //Testing part b;
+    //System.out.println(countTrianglesB(filename)); //correct answer 95
+
+    //Testing complex file
+    System.out.println(complexFile(filename)); //correct answer 1
   }
 
 }
