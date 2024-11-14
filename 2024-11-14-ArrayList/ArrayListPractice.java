@@ -16,7 +16,7 @@ public class ArrayListPractice {
     }
     return result;
   }
-  
+
 
 
   public static void replaceEmpty( ArrayList<String> original){
@@ -32,8 +32,7 @@ public class ArrayListPractice {
   public static ArrayList<String> makeReversedList(ArrayList<String> original){
    //return a new ArrayList that is in the reversed order of the original.
      ArrayList<String> result = new ArrayList<String>();
-     for (int i = original.size(); i > 0; i++)
-     {
+     for (int i = original.size(); i > 0; i++) {
        result.add(original.get(i));
      }
      return result;
@@ -44,20 +43,19 @@ public class ArrayListPractice {
    //a[0], b[0], a[1], b[1]...
    //If one list is longer than the other, just attach the remaining values to the end.
      ArrayList<String> result = new ArrayList<String>();
-     for (int i = 0; i < (a.size() > b.size()? a.size(): b.size()); i++)
-     {
-         if (i < a.size())
-         {
+     if (a.size() > b.size()) {
+       int size = a.size();
+     } else {
+       int size = b.size();
+     }
+     for (int i = 0; i < size ; i++){
+         if (i < a.size()) {
            result.add(a.get(i));
          }
-         if (i < b.size())
-         {
+         if (i < b.size()) {
            result.add(b.get(i));
          }
      }
      return result;
    }
-
-
-
 }
