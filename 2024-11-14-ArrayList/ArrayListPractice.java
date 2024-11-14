@@ -16,6 +16,7 @@ public class ArrayListPractice {
     }
     return result;
   }
+  
 
 
   public static void replaceEmpty( ArrayList<String> original){
