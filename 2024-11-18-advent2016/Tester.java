@@ -1,8 +1,20 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class Tester {
+
+  public static String[] parse(String filename) {
+
+    try {
+      Scanner input = new Scanner(new File(filename));
+      String[] result = input.nextLine().split(", ");
+      return result;
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+      return null;
+    }
+
+  }
 
   public static void main(String[] args) {
 
@@ -12,11 +24,12 @@ public class Tester {
     //Testing day 3 parts 1 and 2
     task = "Day 3 Parts 1 & 2";
     filename = "Day3Input.txt";
-    System.out.print(task + ": " + Day3.countTriangles1(filename) + ", " + Day3.countTriangles2(filename));
+    System.out.println(task + ": " + Day3.countTriangles1(filename) + ", " + Day3.countTriangles2(filename));
 
     //Testing day 1 part 1
     task = "Day 1 Part 1";
     filename = "Day1Input.txt";
+    System.out.println(Arrays.toString(parse(filename)));
 
     //Testing day 2 part 1
     task = "Day 2 Part 1";
