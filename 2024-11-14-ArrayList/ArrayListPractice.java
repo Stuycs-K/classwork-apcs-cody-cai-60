@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class ArrayListPractice {
 
-  public static ArrayList<String> createRandomArray (int size) {
+  public static ArrayList<String> createRandomArray(int size) {
     ArrayList<String> result = new ArrayList<String>();
     for (int i = 0; i < size; i++) {
       String add = "";
@@ -32,7 +32,7 @@ public class ArrayListPractice {
   public static ArrayList<String> makeReversedList(ArrayList<String> original){
    //return a new ArrayList that is in the reversed order of the original.
      ArrayList<String> result = new ArrayList<String>();
-     for (int i = original.size(); i > 0; i++) {
+     for (int i = original.size()-1; i >= 0; i--) {
        result.add(original.get(i));
      }
      return result;
@@ -43,12 +43,13 @@ public class ArrayListPractice {
    //a[0], b[0], a[1], b[1]...
    //If one list is longer than the other, just attach the remaining values to the end.
      ArrayList<String> result = new ArrayList<String>();
+     int size = 0;
      if (a.size() > b.size()) {
-       int size = a.size();
+       size = a.size();
      } else {
-       int size = b.size();
+       size = b.size();
      }
-     for (int i = 0; i < size ; i++){
+     for (int i = 0; i < size; i++){
          if (i < a.size()) {
            result.add(a.get(i));
          }
