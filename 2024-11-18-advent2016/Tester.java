@@ -40,7 +40,7 @@ public class Tester {
     //Testing day 4 part 1
     task = "Day 4 Part 1";
     filename = "Day4Input.txt";
-    System.out.println();
+    System.out.println(task + ": " + Day4.sectorIDs(filename));
 
     //Testing day 6 part 1
     task = "Day 6 Part 1";
