@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Tester {
 
-  public static String[] parse(String filename) {
+  public static String[] parseDay1(String filename) {
 
     try {
       Scanner input = new Scanner(new File(filename));
@@ -29,16 +29,18 @@ public class Tester {
     //Testing day 1 part 1
     task = "Day 1 Part 1";
     filename = "Day1Input.txt";
-    String[] data = parse(filename);
+    String[] data = parseDay1(filename);
     System.out.println(task + ": " + Day1.traverseGrid(data));
 
     //Testing day 2 part 1
     task = "Day 2 Part 1";
     filename = "Day2Input.txt";
+    System.out.println(task + ": " + Day2.keypad(filename));
 
     //Testing day 4 part 1
     task = "Day 4 Part 1";
     filename = "Day4Input.txt";
+    System.out.println();
 
     //Testing day 6 part 1
     task = "Day 6 Part 1";
