@@ -29,7 +29,8 @@ public class Tester {
     //Testing day 1 part 1
     task = "Day 1 Part 1";
     filename = "Day1Input.txt";
-    System.out.println(Arrays.toString(parse(filename)));
+    String[] data = parse(filename);
+    System.out.println(task + ": " + Day1.traverseGrid(data));
 
     //Testing day 2 part 1
     task = "Day 2 Part 1";
