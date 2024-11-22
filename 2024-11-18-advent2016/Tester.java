@@ -27,7 +27,7 @@ public class Tester {
     System.out.println(task + ": " + Day3.countTriangles1(filename) + ", " + Day3.countTriangles2(filename));
 
     //Testing day 1 part 1
-    task = "Day 1 Part 1";
+    task = "Day 1 Parts 1 & 2";
     filename = "Day1Input.txt";
     String[] data = parseDay1(filename);
     System.out.println(task + ": " + Day1.traverseGrid(data));
@@ -38,6 +38,7 @@ public class Tester {
     System.out.println(task + ": " + Day2.keypad(filename));
 
     //Testing day 4 part 1
+    //gave up
     task = "Day 4 Part 1";
     filename = "Day4Input.txt";
     System.out.println(task + ": " + Day4.sectorIDs(filename));

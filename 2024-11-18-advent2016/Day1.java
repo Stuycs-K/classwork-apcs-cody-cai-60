@@ -3,10 +3,14 @@ import java.io.*;
 
 public class Day1 {
 
-  public static int traverseGrid(String[] data) {
+  public static String traverseGrid(String[] data) {
 
     //facing: 0 for north, 1 for east, 2 for south, 3 for west
     int x = 0, y = 0, facing = 0;
+
+    //declaring ArrayList to store points
+    ArrayList<int[]> points = new ArrayList<int[]>();
+    points.add(new int[] {0, 0});
 
     for (int i = 0; i < data.length; i++) {
 
@@ -14,72 +18,61 @@ public class Day1 {
       String direction = data[i].substring(0, 1);
       int magnitude = Integer.parseInt(data[i].substring(1));
 
-      //declaring ArrayList to store points
-      ArrayList<Integer> points = new ArrayList<Integer>();
-
       //for right turns
       if (direction.equals("R")) {
         if (facing == 0) {
+          facing = 1;
           for (int j = 0; j < magnitude; j++) {
             x++;
-            points.add(x);
-            points.add(y);
+            points.add(new int[] {x, y});
           }
-          facing = 1;
         } else if (facing == 1) {
+          facing = 2;
           for (int j = 0; j < magnitude; j++) {
             y--;
-            points.add(x);
-            points.add(y);
+            points.add(new int[] {x, y});
           }
-          facing = 2;
         } else if (facing == 2) {
+          facing = 3;
           for (int j = 0; j < magnitude; j++) {
             x--;
-            points.add(x);
-            points.add(y);
+            points.add(new int[] {x, y});
           }
-          facing = 3;
         } else if (facing == 3) {
+          facing = 0;
           for (int j = 0; j < magnitude; j++) {
             x++;
-            points.add(x);
-            points.add(y);
+            points.add(new int[] {x, y});
           }
-          facing = 0;
         }
       }
 
       //for left turns
       if (direction.equals("L")) {
         if (facing == 0) {
+          facing = 3;
           for (int j = 0; j < magnitude; j++) {
             x--;
-            points.add(x);
-            points.add(y);
+            points.add(new int[] {x, y});
           }
-          facing = 3;
         } else if (facing == 1) {
+          facing = 0;
           for (int j = 0; j < magnitude; j++) {
             y++;
-            points.add(x);
-            points.add(y);
+            points.add(new int[] {x, y});
           }
-          facing = 0;
         } else if (facing == 2) {
+          facing = 1;
           for (int j = 0; j < magnitude; j++) {
             x++;
-            points.add(x);
-            points.add(y);
+            points.add(new int[] {x, y});
           }
-          facing = 1;
         } else if (facing == 3) {
+          facing = 2;
           for (int j = 0; j < magnitude; j++) {
             y--;
-            points.add(x);
-            points.add(y);
+            points.add(new int[] {x, y});
           }
-          facing = 2;
         }
       }
 
@@ -90,8 +83,23 @@ public class Day1 {
 
     //for part 2
     for (int i = 0; i < points.size(); i++) {
-      
+
+      int[] tempArr = points.get(i);
+
+      //looping through the same ArrayList again
+      for (int j = i+1; j < points.size(); j++) {
+
+        int[] tempArr2 = points.get(j);
+
+        if (Arrays.equals(tempArr, tempArr2)) {
+          return distance + ", " + Arrays.toString(tempArr);
+        }
+
+      }
+
     }
+
+    return distance + ", could not find";
 
   }
 
