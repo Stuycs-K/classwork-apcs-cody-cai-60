@@ -46,6 +46,7 @@ public class Tester {
     //Testing day 6 part 1
     task = "Day 6 Part 1";
     filename = "Day6Input.txt";
+    System.out.println(task + ": " + Day6.repetitionCode(filename));
 
   }
 
