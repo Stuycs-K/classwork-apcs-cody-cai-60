@@ -14,19 +14,38 @@ public class Day1 {
       String direction = data[i].substring(0, 1);
       int magnitude = Integer.parseInt(data[i].substring(1));
 
+      //declaring ArrayList to store points
+      ArrayList<Integer> points = new ArrayList<Integer>();
+
       //for right turns
       if (direction.equals("R")) {
         if (facing == 0) {
-          x += magnitude;
+          for (int j = 0; j < magnitude; j++) {
+            x++;
+            points.add(x);
+            points.add(y);
+          }
           facing = 1;
         } else if (facing == 1) {
-          y -= magnitude;
+          for (int j = 0; j < magnitude; j++) {
+            y--;
+            points.add(x);
+            points.add(y);
+          }
           facing = 2;
         } else if (facing == 2) {
-          x -= magnitude;
+          for (int j = 0; j < magnitude; j++) {
+            x--;
+            points.add(x);
+            points.add(y);
+          }
           facing = 3;
         } else if (facing == 3) {
-          y += magnitude;
+          for (int j = 0; j < magnitude; j++) {
+            x++;
+            points.add(x);
+            points.add(y);
+          }
           facing = 0;
         }
       }
@@ -34,24 +53,46 @@ public class Day1 {
       //for left turns
       if (direction.equals("L")) {
         if (facing == 0) {
-          x -= magnitude;
+          for (int j = 0; j < magnitude; j++) {
+            x--;
+            points.add(x);
+            points.add(y);
+          }
           facing = 3;
         } else if (facing == 1) {
-          y += magnitude;
+          for (int j = 0; j < magnitude; j++) {
+            y++;
+            points.add(x);
+            points.add(y);
+          }
           facing = 0;
         } else if (facing == 2) {
-          x += magnitude;
+          for (int j = 0; j < magnitude; j++) {
+            x++;
+            points.add(x);
+            points.add(y);
+          }
           facing = 1;
         } else if (facing == 3) {
-          y -= magnitude;
+          for (int j = 0; j < magnitude; j++) {
+            y--;
+            points.add(x);
+            points.add(y);
+          }
           facing = 2;
         }
       }
 
     }
 
-    //calculating distance
-    return x + y;
+    //distance for part 1
+    int distance = x + y;
+
+    //for part 2
+    for (int i = 0; i < points.size(); i++) {
+      
+    }
+
   }
 
 }
