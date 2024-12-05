@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Driver {
 
   // MODIFIERS
@@ -73,9 +75,61 @@ public class Driver {
     System.out.print(CLEAR_SCREEN);
     System.out.print(HIDE_CURSOR);
 
-    
+    // border
+    color(RED, background(GREEN));
+    go (2, 1);
+    for (int i = 0; i < 80; i++) {
+      System.out.print("#");
+    }
+
+    for (int i = 0; i < 28; i++) {
+      go(3+i, 1);
+      System.out.print("#");
+    }
+
+    for (int i = 0; i < 28; i++) {
+      go(3+i, 80);
+      System.out.print("#");
+    }
+
+    go (29, 1);
+    for (int i = 0; i < 80; i++) {
+      System.out.print("#");
+    }
 
     System.out.println(RESET);
+
+    // array
+    int[] arr = new int[3];
+    for (int i = 0; i < 3; i++) {
+      int add = (int) (99 * Math.random());
+      arr[i] = add;
+    }
+
+    // displaying arr ints
+    int j = 0;
+    for (int num : arr) {
+      if (num < 25) {
+        color(BRIGHT, RED);
+      } else if (num > 75) {
+        color(BRIGHT, GREEN);
+      } else {
+        color(WHITE);
+      }
+      go(2, 20+j);
+      System.out.print(num);
+      j+=20;
+    }
+
+    // horizontal separator
+    color(RED, background(GREEN));
+    go (3, 2);
+    for (int i = 0; i < 78; i++) {
+      System.out.print("-");
+    }
+
+    System.out.println(RESET);
+    go(31, 0);
   }
 
 }
