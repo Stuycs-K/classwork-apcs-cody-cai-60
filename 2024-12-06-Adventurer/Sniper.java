@@ -1,23 +1,32 @@
 import java.util.Random;
-public class Sniper extends Adventurer {
+public abstract class Sniper extends Adventurer {
 
   private int magicBullets, maxMagicBullets;
 
+  // constructors
+  public Sniper(String name){
+    super(name);
+  }
+
+  public Sniper(String name, int hp) {
+    super(name, hp);
+  }
+
   // accessor methods
   public String getSpecialName() {
-
+    return "Magic Bullets";
   }
 
   public int getSpecial() {
-
+    return this.magicBullets;
   }
 
   public void setSpecial(int n) {
-
+    this.magicBullets = n;
   }
 
   public int getSpecialMax() {
-
+    return this.maxMagicBullets;
   }
 
   // hurt ot hinder the target adventurer
@@ -36,7 +45,7 @@ public class Sniper extends Adventurer {
   }
 
   //hurt or hinder the target adventurer, consume some special resource
-  public abstract String specialAttack(Adventurer other) {
+  public String specialAttack(Adventurer other) {
 
   }
 
