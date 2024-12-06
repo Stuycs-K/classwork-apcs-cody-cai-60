@@ -6,10 +6,20 @@ public abstract class Sniper extends Adventurer {
   // constructors
   public Sniper(String name){
     super(name);
+    this.magicBullets = 5;
+    this.maxMagicBullets = 5;
   }
 
   public Sniper(String name, int hp) {
     super(name, hp);
+    this.maxMagicBullets = 5;
+    this.magicBullets = maxMagicBullets;
+  }
+
+  public Sniper(String name, int hp, int magicBullets) {
+    super(name, hp);
+    this.magicBullets = magicBullets;
+    this.maxMagicBullets = magicBullets;
   }
 
   // accessor methods
@@ -31,7 +41,13 @@ public abstract class Sniper extends Adventurer {
 
   // hurt ot hinder the target adventurer
   public String attack (Adventurer other) {
-
+    Random rand = new Random();
+    int dmg = rand.nextInt(10);
+    if (dmg > other.getHP()) {
+      dmg = other.getHP();
+    }
+    other.setHP(other.getHP() - dmg);
+    return "Target Hit!";
   }
 
   // heal or buff the target adventurer
