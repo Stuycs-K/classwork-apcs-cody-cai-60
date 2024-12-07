@@ -1,5 +1,5 @@
 import java.util.Random;
-public abstract class Sniper extends Adventurer {
+public class Sniper extends Adventurer {
 
   private int magicBullets, maxMagicBullets;
 
@@ -47,7 +47,7 @@ public abstract class Sniper extends Adventurer {
       dmg = other.getHP();
     }
     other.setHP(other.getHP() - dmg);
-    return "Target Hit! Damage Dealt: " + dmg;
+    return "Target Hit! Damage Dealt: " + dmg + " Target's HP: " + other.getHP();
   }
 
   // heal or buff the target adventurer
@@ -58,7 +58,7 @@ public abstract class Sniper extends Adventurer {
       heal = other.getmaxHP() - other.getHP();
     }
     other.setHP(other.getHP() + heal);
-    return "Target Healed! Healed By: " + heal;
+    return "Target Healed! Healed By: " + heal + " Target's HP: " + other.getHP();
   }
 
   // heal or buff self
@@ -69,7 +69,7 @@ public abstract class Sniper extends Adventurer {
       heal = getmaxHP() - getHP();
     }
     setHP(getHP() + heal);
-    return "Healed! HP: " + getHP();
+    return "Healed! Healed By: " + heal + " HP: " + getHP();
   }
 
   //hurt or hinder the target adventurer, consume some special resource
@@ -80,8 +80,9 @@ public abstract class Sniper extends Adventurer {
       if (dmg > other.getmaxHP() - other.getHP()) {
         dmg = other.getmaxHP() - other.getHP();
       }
+      other.setHP(other.getHP() - dmg);
       setSpecial(getSpecial() - 1);
-      return "Target Hit! Damage Dealth: " + dmg;
+      return "Target Hit! Damage Dealt: " + dmg + " Target's HP: " + other.getHP();
     } else {
       return "Attack Failed! Out of Magic Bullets";
     }
