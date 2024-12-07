@@ -42,29 +42,29 @@ public abstract class Sniper extends Adventurer {
   // hurt ot hinder the target adventurer
   public String attack (Adventurer other) {
     Random rand = new Random();
-    int dmg = rand.nextInt(10);
+    int dmg = rand.nextInt(5);
     if (dmg > other.getHP()) {
       dmg = other.getHP();
     }
     other.setHP(other.getHP() - dmg);
-    return "Target Hit!";
+    return "Target Hit! Damage Dealt: " + dmg;
   }
 
   // heal or buff the target adventurer
   public String support (Adventurer other) {
     Random rand = new Random();
-    int heal = rand.nextInt(10);
+    int heal = rand.nextInt(5);
     if (heal > other.getmaxHP() - other.getHP()) {
       heal = other.getmaxHP() - other.getHP();
     }
     other.setHP(other.getHP() + heal);
-    return "Target Healed!";
+    return "Target Healed! Healed By: " + heal;
   }
 
   // heal or buff self
   public String support() {
     Random rand = new Random();
-    int heal = rand.nextInt(10);
+    int heal = rand.nextInt(5);
     if (heal > getmaxHP() - getHP()) {
       heal = getmaxHP() - getHP();
     }
@@ -74,7 +74,17 @@ public abstract class Sniper extends Adventurer {
 
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other) {
-    
+    Random rand = new Random();
+    int dmg = rand.nextInt(other.getHP());
+    if (getSpecial() > 0) {
+      if (dmg > other.getmaxHP() - other.getHP()) {
+        dmg = other.getmaxHP() - other.getHP();
+      }
+      setSpecial(getSpecial() - 1);
+      return "Target Hit! Damage Dealth: " + dmg;
+    } else {
+      return "Attack Failed! Out of Magic Bullets";
+    }
   }
 
 }
