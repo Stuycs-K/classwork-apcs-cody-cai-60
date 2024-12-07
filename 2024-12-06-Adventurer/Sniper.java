@@ -52,17 +52,29 @@ public abstract class Sniper extends Adventurer {
 
   // heal or buff the target adventurer
   public String support (Adventurer other) {
-
+    Random rand = new Random();
+    int heal = rand.nextInt(10);
+    if (heal > other.getmaxHP() - other.getHP()) {
+      heal = other.getmaxHP() - other.getHP();
+    }
+    other.setHP(other.getHP() + heal);
+    return "Target Healed!";
   }
 
   // heal or buff self
   public String support() {
-
+    Random rand = new Random();
+    int heal = rand.nextInt(10);
+    if (heal > getmaxHP() - getHP()) {
+      heal = getmaxHP() - getHP();
+    }
+    setHP(getHP() + heal);
+    return "Healed! HP: " + getHP();
   }
 
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other) {
-
+    
   }
 
 }
