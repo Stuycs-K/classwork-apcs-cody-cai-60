@@ -46,7 +46,7 @@ public class Sniper extends Adventurer {
     if (dmg > other.getHP()) {
       dmg = other.getHP();
     }
-    other.setHP(other.getHP() - dmg);
+    other.applyDamage(dmg);
     return "Target Hit! Damage Dealt: " + dmg + " Target's HP: " + other.getHP();
   }
 
@@ -80,7 +80,7 @@ public class Sniper extends Adventurer {
       if (dmg > other.getmaxHP() - other.getHP()) {
         dmg = other.getmaxHP() - other.getHP();
       }
-      other.setHP(other.getHP() - dmg);
+      other.applyDamage(dmg);
       setSpecial(getSpecial() - 1);
       return "Target Hit! Damage Dealt: " + dmg + " Target's HP: " + other.getHP();
     } else {
